@@ -1,12 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Footer from './components/Footer/Footer.component'
+import Header from './components/Header/Header.component'
 
 function App() {
   return (
-    <div>
-      hello there
-    </div>
-  );
+    <>
+      <Header />
+      <Footer />
+    </>
+  )
 }
 
-export default App;
+export default App
