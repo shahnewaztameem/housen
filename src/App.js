@@ -1,14 +1,10 @@
 import React from 'react'
 import './App.css'
-import Footer from './components/Footer/Footer.component'
-import Header from './components/Header/Header.component'
+import HomePage from './Pages/HomePage'
 
 function App() {
   return (
-    <>
-      <Header />
-      <Footer />
-    </>
+    <HomePage/>
   )
 }
 
