@@ -4,7 +4,7 @@ import logo from '../../assets/images/logo/Logo.svg'
 
 const Header = () => {
   return (
-    <div className='container mt-3'>
+    <div className='container pt-3'>
       <nav className='navbar navbar-expand-lg navbar-light'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='/'>

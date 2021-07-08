@@ -1,4 +1,10 @@
 .results {
   padding: 20px;
-  border: 2px solid black;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.04);
+  background-color: #fff;
+}
+
+.info_color span {
+  color: #616161;
+  font-size: 18px;
 }

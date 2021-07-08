@@ -11,13 +11,13 @@ const DataItem = ({
     <div
       className={`d-flex ${styles.results} mb-4 justify-content-between align-items-center`}
     >
-      <div className='fw-bold'>
+      <div className='fw-bold' style={{fontSize: '18px'}}>
         {city_name}
         {', '}
         {short_code}
       </div>
 
-      <div>
+      <div className={`${styles.info_color}`}>
         <span className='me-2'>
           <img src={filterIcon} alt='filter icon' />
         </span>

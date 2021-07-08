@@ -5,11 +5,11 @@ const HeroSection = () => {
   return (
     <div className='container mt-5 pt-5'>
       <div className='row'>
-        <div className={`col-md-12 text-center ${styles.custom_hero_width}`}>
+        <div className='text-center col-md-6 offset-md-3'>
           <div className='heading'>
-            <h1>Find your ideal home</h1>
+            <h1 className={`${styles.hero_title}`}>Find your ideal home</h1>
           </div>
-          <h4 className='sub_heading'>
+          <h4 className={`${styles.sub_heading}`}>
             Search from more than 19 million of inspected appartments, houses,
             cottages, villas, manors and mansions
           </h4>
