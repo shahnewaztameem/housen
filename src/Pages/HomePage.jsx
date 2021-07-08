@@ -46,20 +46,22 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
-      <HeroSection />
-      <SearchBar onFormSubmit={handleSearchTextSubmit} />
-      {loading ? (
-        <Loader />
-      ) : realEstateList.length === 0 ? (
-        <div className='container'>
-          <div className='col-md-6 offset-md-3 text-center mt-5'>
-            <h4 className='text-danger'>No Data Found</h4>
+      <div className='wrapper'>
+        <Header />
+        <HeroSection />
+        <SearchBar onFormSubmit={handleSearchTextSubmit} />
+        {loading ? (
+          <Loader />
+        ) : realEstateList.length === 0 ? (
+          <div className='container'>
+            <div className='col-md-6 offset-md-3 text-center mt-5'>
+              <h4 className='text-danger'>No Data Found</h4>
+            </div>
           </div>
-        </div>
-      ) : (
-        <DataList realEstateList={realEstateList} />
-      )}
+        ) : (
+          <DataList realEstateList={realEstateList} />
+        )}
+      </div>
 
       <Footer />
     </>

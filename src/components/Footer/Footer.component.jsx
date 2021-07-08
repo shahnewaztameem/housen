@@ -3,7 +3,7 @@ import styles from './Footer.module.css'
 
 const Footer = () => {
   return (
-    <footer className="py-3 bg-white">
+    <footer className={`py-3 bg-white ${styles.footer_wrapper}`}>
       <div className='container'>
         <div className={`row ${styles.footer_color}`}>
           <div className='col-md-6'>
