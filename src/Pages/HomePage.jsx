@@ -12,24 +12,32 @@ const HomePage = () => {
   const [loading, setLoading] = useState(true)
 
   const getData = async () => {
-    const {
-      data: { result },
-    } = await api.get('/')
-    setRealEstateList(result)
-    setLoading(false)
+    try {
+      const {
+        data: { result },
+      } = await api.get('/')
+      setRealEstateList(result)
+      setLoading(false)
+    } catch (error) {
+      console.error(error.message)
+    }
   }
 
   const handleSearchTextSubmit = async (searchText) => {
-    setLoading(true)
-    const {
-      data: { result },
-    } = await api.get('/', {
-      params: {
-        city_name: searchText.trim(),
-      },
-    })
-    setRealEstateList(result)
-    setLoading(false)
+    try {
+      setLoading(true)
+      const {
+        data: { result },
+      } = await api.get('/', {
+        params: {
+          city_name: searchText.trim(),
+        },
+      })
+      setRealEstateList(result)
+      setLoading(false)
+    } catch (error) {
+      console.error(error.message)
+    }
   }
 
   useEffect(() => {
