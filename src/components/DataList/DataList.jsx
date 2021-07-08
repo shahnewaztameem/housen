@@ -1,8 +1,8 @@
 import React from 'react'
 import DataItem from '../DataItem/DataItem.component'
 
-const DataList = ({ realStateList }) => {
-  const renderList = realStateList.map((realState, idx) => (
+const DataList = ({ realEstateList }) => {
+  const renderList = realEstateList.map((realState, idx) => (
     <DataItem key={idx} realState={realState} />
   ))
   return (

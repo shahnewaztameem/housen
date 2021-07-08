@@ -5,15 +5,31 @@ import Footer from '../components/Footer/Footer.component'
 import Header from '../components/Header/Header.component'
 import HeroSection from '../components/HeroSection/HeroSection.component'
 import Loader from '../components/Loader/Loader.component'
+import SearchBar from '../components/SearchBar/SearchBar.component'
 
 const HomePage = () => {
-  const [realStateList, setRealStateList] = useState([])
+  const [realEstateList, setRealEstateList] = useState([])
+  const [loading, setLoading] = useState(true)
 
   const getData = async () => {
     const {
       data: { result },
-    } = await api.get()
-    setRealStateList(result)
+    } = await api.get('/')
+    setRealEstateList(result)
+    setLoading(false)
+  }
+
+  const handleSearchTextSubmit = async (searchText) => {
+    setLoading(true)
+    const {
+      data: { result },
+    } = await api.get('/', {
+      params: {
+        city_name: searchText.trim(),
+      },
+    })
+    setRealEstateList(result)
+    setLoading(false)
   }
 
   useEffect(() => {
@@ -24,10 +40,17 @@ const HomePage = () => {
     <>
       <Header />
       <HeroSection />
-      {realStateList.length === 0 ? (
+      <SearchBar onFormSubmit={handleSearchTextSubmit} />
+      {loading ? (
         <Loader />
+      ) : realEstateList.length === 0 ? (
+        <div className='container'>
+          <div className='col-md-6 offset-md-3 text-center mt-5'>
+            <h4 className='text-danger'>No Data Found</h4>
+          </div>
+        </div>
       ) : (
-        <DataList realStateList={realStateList} />
+        <DataList realEstateList={realEstateList} />
       )}
 
       <Footer />
