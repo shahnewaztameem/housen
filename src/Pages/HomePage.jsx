@@ -4,6 +4,7 @@ import DataList from '../components/DataList/DataList'
 import Footer from '../components/Footer/Footer.component'
 import Header from '../components/Header/Header.component'
 import HeroSection from '../components/HeroSection/HeroSection.component'
+import Loader from '../components/Loader/Loader.component'
 
 const HomePage = () => {
   const [realStateList, setRealStateList] = useState([])
@@ -23,8 +24,11 @@ const HomePage = () => {
     <>
       <Header />
       <HeroSection />
-
-      <DataList realStateList={realStateList} />
+      {realStateList.length === 0 ? (
+        <Loader />
+      ) : (
+        <DataList realStateList={realStateList} />
+      )}
 
       <Footer />
     </>
