@@ -29,3 +29,7 @@
   padding: 8px;
   border-right: 1px solid #a8a8a8;
 }
+
+.search_input_mobile {
+  padding: 5px 15px;
+}

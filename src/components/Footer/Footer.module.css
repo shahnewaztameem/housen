@@ -2,3 +2,9 @@
 .footer_color a {
   color: #a8a8a8;
 }
+
+.footer_nav_mobile {
+  text-align: center;
+  flex: 1 1 auto;
+  display: flex;
+}
